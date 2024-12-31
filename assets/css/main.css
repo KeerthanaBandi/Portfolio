@@ -23,7 +23,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -2952,6 +2953,7 @@ input, select, textarea {
 		}
 
 			header.major > :last-child {
+				color: white;
 				margin-bottom: 0;
 			}
 
@@ -3629,6 +3631,8 @@ input, select, textarea {
 		z-index: 2;
 	}
 
+
+
 		#nav ul.divided li {
 			border-top-color: #ffffff;
 		}
@@ -3843,7 +3847,9 @@ input, select, textarea {
 			padding: 0;
 		}
 
-			#main > .posts > * {
+			#main > .posts > *
+		 {
+			color: #ffffff;
 				-moz-flex-shrink: 1;
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
@@ -3874,6 +3880,7 @@ input, select, textarea {
 			}
 
 				#main > .posts > article > :last-child {
+					
 					margin-bottom: 0;
 				}
 
@@ -4697,8 +4704,4 @@ input, select, textarea {
 			border-radius: 5px;  /* Optional: Rounds the corners of the border */
 			background-color: #f9f9f9; /* Optional: Adds a light background color for distinction */
 		}
-		
-		
-	
-		
-	}
+}

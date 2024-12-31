@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Srikeerthana Reddy Bandi Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
+            }
+
+            #header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #fff;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 10px 20px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                text-decoration: none;
+            }
+
+            #nav {
+                margin-top: 60px;
+                text-align: center;
+            }
+
+            .links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .links a {
+                text-decoration: none;
+                color: #555;
+                font-size: 18px;
+                transition: color 0.3s;
+            }
+
+            .links a:hover {
+                color: #007bff;
+            }
+
+            .links a.active {
+                font-weight: bold;
+                color: #007bff;
+            }
+
+            section {
+                min-height: 100vh;
+                padding: 20px;
+                text-align: center;
+            }
+
+            #about-me {
+                background-color: #f9f9f9;
+            }
+
+            #projects {
+                background-color: #e9ecef;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="header">
+            <a href="#" class="logo">About Me</a>
+        </header>
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="#about-me" class="nav-link">About Me</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+        </nav>
+
+        <!-- About Me Section -->
+        <section id="about-me">
+            <h1>About Me</h1>
+            <p>
+                Hello! I am Srikeerthana Reddy Bandi, a passionate Data Analyst skilled in SQL, Python, Tableau, Power BI, and Excel.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h1>Projects</h1>
+            <p>
+                Explore my portfolio of data analysis, machine learning, and visualization projects. Click on each project for details.
+            </p>
+        </section>
+
+        <!-- JavaScript -->
+        <script>
+            document.addEventListener("scroll", () => {
+                const header = document.querySelector("#header .logo");
+                const aboutMe = document.querySelector("#about-me");
+                const projects = document.querySelector("#projects");
+
+                const aboutMePosition = aboutMe.getBoundingClientRect();
+                const projectsPosition = projects.getBoundingClientRect();
+
+                // Update header text based on the visible section
+                if (
+                    aboutMePosition.top <= window.innerHeight / 2 &&
+                    aboutMePosition.bottom >= window.innerHeight / 2
+                ) {
+                    header.textContent = "About Me";
+                } else if (
+                    projectsPosition.top <= window.innerHeight / 2 &&
+                    projectsPosition.bottom >= window.innerHeight / 2
+                ) {
+                    header.textContent = "Projects";
+                }
+
+                // Highlight active navigation link
+                document.querySelectorAll(".nav-link").forEach((link) => {
+                    link.classList.remove("active");
+                });
+
+                if (
+                    aboutMePosition.top <= window.innerHeight / 2 &&
+                    aboutMePosition.bottom >= window.innerHeight / 2
+                ) {
+                    document.querySelector('a[href="#about-me"]').classList.add("active");
+                } else if (
+                    projectsPosition.top <= window.innerHeight / 2 &&
+                    projectsPosition.bottom >= window.innerHeight / 2
+                ) {
+                    document.querySelector('a[href="#projects"]').classList.add("active");
+                }
+            });
+
+            // Smooth scroll behavior for navigation links
+            document.querySelectorAll(".nav-link").forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth",
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
